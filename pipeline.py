@@ -5,7 +5,11 @@ def read_csv(filepath):
         return list(csv.DictReader(f))
 
 def transform(rows):
-    return [row for row in rows if row.get('amount')]
+    return [
+        {k: v.strip() for k, v in row.items()}
+        for row in rows
+        if row.get('amount')
+    ]
 
 def write_csv(rows, filepath):
     if not rows:
