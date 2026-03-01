@@ -9,6 +9,14 @@ def read_csv(filepath):
     with open(filepath, newline='') as f:
         return list(csv.DictReader(f))
 
+def validate(rows):
+    for row in rows:
+        try:
+            if row.get('amount')/1:
+                print('Its a number!')
+        except Exception as e:
+            print(f"Not a number:\n{e}")
+
 def transform(rows):
     logger.info(f"Transforming {len(rows)} rows")
     return [
