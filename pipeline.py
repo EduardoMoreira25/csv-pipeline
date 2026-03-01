@@ -1,10 +1,16 @@
 import csv
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
+logger = logging.getLogger(__name__)
 
 def read_csv(filepath):
+    logger.info(f"Reading input from {filepath}")
     with open(filepath, newline='') as f:
         return list(csv.DictReader(f))
 
 def transform(rows):
+    logger.info(f"Transforming {len(rows)} rows")
     return [
         {k: v.strip() for k, v in row.items()}
         for row in rows
@@ -12,6 +18,7 @@ def transform(rows):
     ]
 
 def write_csv(rows, filepath):
+    logger.info(f"Writing {len(rows)} rows to {filepath}")
     if not rows:
         return
     with open(filepath, 'w', newline='') as f:
