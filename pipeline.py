@@ -1,3 +1,4 @@
+# csv-pipeline: reads, validates, and transforms sales data
 import csv
 import logging
 
