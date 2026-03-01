@@ -20,7 +20,7 @@ def validate(rows):
             print(f"Not a number:\n{e}")
 
 def transform(rows):
-    logger.info(f"Transforming {len(rows)} rows")
+    logger.info(f"Transforming {len(rows)} rows — branch A version")
     return [
         {k: v.strip() for k, v in row.items()}
         for row in rows
