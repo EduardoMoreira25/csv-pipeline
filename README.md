@@ -13,6 +13,11 @@ A lightweight Python pipeline that reads raw sales data, validates and transform
 ```bash
 python pipeline.py
 ```
+## Environment variables
+| Variable | Description | Required |
+|----------|-------------|----------|
+| DB_HOST  | Database hostname | Yes |
+| LOG_LEVEL | Logging verbosity | No (default: INFO) |
 
 ## Project structure
 ```
