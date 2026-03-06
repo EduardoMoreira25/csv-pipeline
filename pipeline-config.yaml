@@ -1,0 +1,17 @@
+project:
+  name: csv-pipeline
+  version: "1.0.0"
+
+python:
+  version: "3.8"
+  dependencies:
+    - pandas
+    - sqlalchemy
+
+environments:
+  dev:
+    db_host: localhost
+    debug: eduserver
+  prod:
+    db_host: localhost
+    debug: eduserver
